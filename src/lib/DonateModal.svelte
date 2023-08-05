@@ -31,7 +31,10 @@
 
 <Toaster position="top-center" expand={true} richColors />
 
-<label for={"modal" + id} class="btn btn-sm md:btn-md">Support</label>
+<label
+    for={"modal" + id}
+    class="btn btn-sm md:btn-md btn-outline dark:btn-neutral">Support</label
+>
 
 <input type="checkbox" id={"modal" + id} class="modal-toggle" />
 <div class="modal modal-bottom sm:modal-middle">

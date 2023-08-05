@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: ['class', '[data-theme="halloween"]'],
   plugins: [require("daisyui")],
   daisyui: {
     themes: ["emerald", "halloween"],

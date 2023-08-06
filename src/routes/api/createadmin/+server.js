@@ -1,17 +1,18 @@
-export const POST = async ({ locals, request }) => {
-    const data = await request.formData();
-    console.log(data)
-    data.append('role', "admin");
+import { json } from '@sveltejs/kit'
+
+export async function POST({ request, locals }) {
+    const data = await request.json();
     try {
-        await locals.pb.collection('users').create(formData);
-        return {
+        await locals.pb.collection('users').create(data);
+        return json({
             success: true,
             msg: 'success'
-        }
+        })
     } catch (error) {
-        return {
+        console.log(error)
+        return new Response({
             error: true,
             msg: 'server error'
-        }
+        })
     }
 }

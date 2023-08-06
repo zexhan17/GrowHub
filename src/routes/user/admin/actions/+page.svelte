@@ -3,6 +3,7 @@
     import AssignAdmin from "$lib/AssignAdmin.svelte";
     import ManualTransaction from "$lib/ManualTransaction.svelte";
     import UpdateStats from "$lib/UpdateStats.svelte";
+    import CompaignsById from "$lib/CompaignsById.svelte";
 
     export let form;
     export let data;
@@ -15,5 +16,5 @@
     <AssignAdmin />
     <ManualTransaction />
     <UpdateStats {form} />
-    <!-- <CompaignsById /> -->
+    <CompaignsById />
 </div>

@@ -1,6 +1,5 @@
 <script>
     export let stats;
-    console.log(stats);
 </script>
 
 <div class="stat">

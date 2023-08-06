@@ -1,10 +1,14 @@
 <script>
     import { page } from "$app/stores";
+    import Compaign from "$lib/Compaign.svelte";
+
     const user = $page.data.user;
+    export let data;
+    console.log(data.compaigns);
 </script>
 
 <div class="grid place-content-center mt-5 mb-10">
-    <div class="w-72 sm:w-96 md:w-[30rem]">
+    <div class="w-72 sm:w-96 md:w-[30rem] mx-auto">
         {#if user.role == "compaigner"}
             <img
                 class="w-[30rem] h-[12rem] mb-5 rounded-lg"
@@ -76,13 +80,18 @@
         </div>
     </div>
     {#if user.role == "compaigner" && user.compaigns > 0}
-        <div class="grid place-content-center md:block">
+        <div class="mt-10">
             <div
                 class="text-2xl font-bold justify-between items-center flex px-2"
             >
                 <h1 class="">YOUR COMPAIGNS</h1>
                 <h1 class=" pr-1">Total: {user.compaigns}</h1>
             </div>
+            {#if data.compaigns}
+                {#each data.compaigns as compaign}
+                    <Compaign {compaign} owner={true} />
+                {/each}
+            {/if}
         </div>
     {/if}
 </div>

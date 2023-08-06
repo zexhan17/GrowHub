@@ -1,8 +1,8 @@
 <script>
-    import { enhance } from "$app/forms";
     import { page } from "$app/stores";
     import Info from "./Info.svelte";
     import DonateModal from "./DonateModal.svelte";
+    import { Toaster, toast } from "svelte-sonner";
     import ContactModal from "./ContactModal.svelte";
 
     let role = "";
@@ -26,7 +26,26 @@
         completed,
     } = compaign;
     const { email, name } = expand.author;
+
+    async function mark() {
+        const res = await fetch(`/api/mark?id=${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const response = await res.json();
+        console.log(response);
+        if (response.error) {
+            toast.error(response.msg);
+        }
+        if (response.success) {
+            toast.success(response.msg);
+        }
+    }
 </script>
+
+<Toaster position="top-center" expand={true} richColors />
 
 <div
     class="card mx-auto w-80 md:w-[35rem] lg:w-[40rem] bg-primary text-primary-content my-5"
@@ -61,9 +80,8 @@
         {#if auth}
             <div class="card-actions justify-end mt-1">
                 {#if owner && completed == false}
-                    <form action="?/markcompleted" method="post" use:enhance />
-                    <button class="btn btn-sm md:btn-md"
-                        >Mark as Completed</button
+                    <button class="btn btn-sm md:btn-md" on:click={mark}>
+                        Mark as Completed</button
                     >
                 {/if}
                 {#if completed == false && expand.author.id != loginUser}

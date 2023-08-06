@@ -22,6 +22,6 @@
 <input type="checkbox" id={"my-modal-6" + id} class="modal-toggle" />
 <label for={"my-modal-6" + id} class="modal cursor-pointer">
     <label class="modal-box relative text-info-content" for="">
-        <Copy key={id} title={"CompaignId"} value={id} />
+        <Copy title={"CompaignId"} value={id} />
     </label>
 </label>

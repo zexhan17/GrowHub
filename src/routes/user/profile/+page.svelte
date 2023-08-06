@@ -59,6 +59,15 @@
                 <span>{$page.data.user.reg_no}</span>
             </div>
         {/if}
+
+        {#if user.role == "donor"}
+            <div
+                class="bg-base-200 flex justify-between items-center py-2 px-3"
+            >
+                <span>Donations</span>
+                <span>{$page.data.user.donations}</span>
+            </div>
+        {/if}
         <div
             class="bg-base-300 flex justify-between items-center py-2 px-3 rounded-b-lg"
         >

@@ -1,6 +1,6 @@
 <script>
     import { page } from "$app/stores";
-    import { user, admin } from "./routes";
+    import { donor, admin, compaigner } from "./routes";
 
     let renderItems = [];
     $: pathname = $page.url.pathname;
@@ -8,8 +8,10 @@
 
     if (role == "admin") {
         renderItems = [...renderItems, ...admin];
+    } else if (role == "donor") {
+        renderItems = [...renderItems, ...donor];
     } else {
-        renderItems = [...renderItems, ...user];
+        renderItems = [...renderItems, ...compaigner];
     }
 </script>
 

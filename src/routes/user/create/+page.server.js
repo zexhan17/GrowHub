@@ -5,6 +5,7 @@ export const actions = {
 
         try {
             const record = await locals.pb.collection('compaigns').create(formData);
+            await locals.pb.collection('users').update(locals.user.id, { 'compaigns+': '1' });
             return {
                 success: true,
                 msg: 'Success!'

@@ -1,7 +1,9 @@
 
 export async function load({ locals }) {
     try {
-        let msgs = await locals.pb.collection('msgs').getFullList();
+        let msgs = await locals.pb.collection('msgs').getFullList({
+            expand: 'sender'
+        });
         msgs = JSON.parse(JSON.stringify(msgs))
         return {
             success: true,

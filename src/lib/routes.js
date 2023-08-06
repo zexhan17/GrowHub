@@ -7,11 +7,15 @@ export const admin = [
     { title: "requests", path: "/user/admin/requests" },
 ];
 
-export const user = [
+export const donor = [
     { title: "home", path: "/user/home" },
     { title: "profile", path: "/user/profile" },
     { title: "contact us", path: "/user/contact" },
     { title: "funded compaigns", path: "/public/funded" },
     { title: "non funded compaigns", path: "/public/nonfunded" },
-    { title: "notifications", path: "/user/notification" },
 ];
+
+export const compaigner = [
+    { title: "notifications", path: "/user/notification" },
+    ...donor
+]

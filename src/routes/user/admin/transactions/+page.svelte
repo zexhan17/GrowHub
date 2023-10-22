@@ -130,7 +130,9 @@
                         <td class="sm:hidden">{i + 1}</td>
                     </tr>
                 {:else}
-                    No Record
+                    <tr class="font-bold text-xl text-center">
+                        <td colspan="100%"> No Record </td>
+                    </tr>
                 {/each}
             {/if}
         </tbody>

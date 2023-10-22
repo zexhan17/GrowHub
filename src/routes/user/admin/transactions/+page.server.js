@@ -36,9 +36,12 @@ export const actions = {
             await locals.pb.collection('compaigns').update(compaign_id, { 'donations+': + amount });
             await locals.pb.collection('users').update(donor_id, { 'donations+': amount });
             await locals.pb.collection('users').update(compaigner_id, { 'receivings+': amount });
+            await locals.pb.collection('stats').update('46pf7n5f1y3yle1', { 'donations+': amount, 'needed-': amount });
+
             const compaign = await locals.pb.collection('compaigns').getOne(compaign_id);
             if (compaign.need <= compaign.donations) {
                 await locals.pb.collection('compaigns').update(compaign_id, { completed: true });
+                await locals.pb.collection('stats').update('46pf7n5f1y3yle1', { 'compaigns+': 1, });
             }
             return {
                 success: true,

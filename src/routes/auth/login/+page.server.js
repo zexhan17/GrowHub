@@ -31,8 +31,12 @@ export const actions = {
             locals.user = undefined
             return fail(400, {
                 error: true,
-                msg: "Visit admin"
+                msg: "you are not verified yet, Visit admin!"
             })
+        }
+
+        if (res.record.role == "admin") {
+            throw redirect(303, '/user/admin/actions');
         }
 
         throw redirect(303, '/user/home');

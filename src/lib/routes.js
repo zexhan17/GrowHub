@@ -10,12 +10,12 @@ export const admin = [
 export const donor = [
     { title: "home", path: "/user/home" },
     { title: "profile", path: "/user/profile" },
-    { title: "contact us", path: "/user/contact" },
     { title: "funded compaigns", path: "/public/funded" },
     { title: "non funded compaigns", path: "/public/nonfunded" },
+    { title: "contact us", path: "/user/contact" },
 ];
 
 export const compaigner = [
+    ...donor,
     { title: "notifications", path: "/user/notification" },
-    ...donor
 ]

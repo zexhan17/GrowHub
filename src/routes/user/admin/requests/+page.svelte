@@ -2,6 +2,7 @@
     import { enhance } from "$app/forms";
     import { Toaster, toast } from "svelte-sonner";
     import ImgModal from "$lib/ImgModal.svelte";
+    import NA from "$lib/NA.svelte";
 
     export let data;
     export let form;
@@ -45,10 +46,34 @@
                         <td>{i + 1}</td>
                         <td>{d.role}</td>
                         <td>{d.name}</td>
-                        <td>{d.clg_roll_no}</td>
-                        <td>{d.gc_roll_no}</td>
-                        <td>{d.reg_no}</td>
-                        <td> <ImgModal id={d.id} avatar={d.avatar} /> </td>
+                        <td>
+                            {#if d.role == "compgainer"}
+                                {d.clg_roll_no}
+                            {:else}
+                                <NA />
+                            {/if}
+                        </td>
+                        <td>
+                            {#if d.role == "compgainer"}
+                                {d.gc_roll_no}
+                            {:else}
+                                <NA />
+                            {/if}
+                        </td>
+                        <td>
+                            {#if d.role == "compgainer"}
+                                {d.reg_no}
+                            {:else}
+                                <NA />
+                            {/if}
+                        </td>
+                        <td>
+                            {#if d.role == "compgainer"}
+                                <ImgModal id={d.id} avatar={d.avatar} />
+                            {:else}
+                                <NA />
+                            {/if}
+                        </td>
                         <td>
                             <div class="flex gap-2">
                                 <form
@@ -83,6 +108,10 @@
                             </div>
                         </td>
                         <td class="sm:hidden">{i + 1}</td>
+                    </tr>
+                {:else}
+                    <tr class="font-bold text-xl text-center">
+                        <td colspan="100%"> No Requests </td>
                     </tr>
                 {/each}
             {/if}

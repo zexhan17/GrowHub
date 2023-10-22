@@ -5,7 +5,7 @@
     export let email;
 </script>
 
-<label for={"Contactmodal" + id} class="btn btn-secondary btn-sm md:btn-md"
+<label for={"Contactmodal" + id} class="btn btn-neutral btn-sm md:btn-md"
     >Contact</label
 >
 

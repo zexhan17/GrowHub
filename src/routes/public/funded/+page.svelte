@@ -19,5 +19,5 @@
 {#each data.list as compaign}
     <Compaign owner={false} {compaign} />
 {:else}
-    <div>No Compaigns right now</div>
+    <div class="text-center mt-5">No Compaigns right now</div>
 {/each}

@@ -8,5 +8,5 @@
 {#each data.msgs as msg}
     <Message {msg} {form} />
 {:else}
-    No messsage
+    <div class="text-center font-bold text-2xl">no messsages</div>
 {/each}

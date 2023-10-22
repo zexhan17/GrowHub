@@ -100,6 +100,20 @@
                 <div class="form-control w-full">
                     <!-- svelte-ignore a11y-label-has-associated-control -->
                     <label class="label">
+                        <span class="label-text">Account</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="account"
+                        value={form?.account ?? ""}
+                        placeholder="Type here"
+                        class="input input-bordered"
+                    />
+                </div>
+
+                <div class="form-control w-full">
+                    <!-- svelte-ignore a11y-label-has-associated-control -->
+                    <label class="label">
                         <span class="label-text">GC Roll no</span>
                     </label>
                     <input

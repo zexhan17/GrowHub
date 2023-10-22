@@ -1,7 +1,7 @@
 <script>
     import { page } from "$app/stores";
     import Compaign from "$lib/Compaign.svelte";
-
+    import { PUBLIC_PB } from "$env/static/public";
     const user = $page.data.user;
     export let data;
     console.log(data.compaigns);
@@ -12,7 +12,7 @@
         {#if user.role == "compaigner"}
             <img
                 class="w-[30rem] h-[12rem] mb-5 rounded-lg"
-                src={`http://127.0.0.1:8090/api/files/_pb_users_auth_/${user.id}/${user.avatar}`}
+                src={`${PUBLIC_PB}api/files/_pb_users_auth_/${user.id}/${user.avatar}`}
                 alt="clg card"
             />
         {/if}
@@ -62,6 +62,12 @@
                 <span>Reg no</span>
                 <span>{$page.data.user.reg_no}</span>
             </div>
+            <div
+                class="bg-base-300 flex justify-between items-center py-2 px-3"
+            >
+                <span>Reg no</span>
+                <span>{$page.data.user.account}</span>
+            </div>
         {/if}
 
         {#if user.role == "donor"}
@@ -73,7 +79,9 @@
             </div>
         {/if}
         <div
-            class="bg-base-300 flex justify-between items-center py-2 px-3 rounded-b-lg"
+            class={` ${
+                user.role == "compaigner" ? "bg-base-300" : "bg-base-200"
+            } flex justify-between items-center py-2 px-3 rounded-b-lg`}
         >
             <span>Id</span>
             <span>{$page.data.user.id}</span>

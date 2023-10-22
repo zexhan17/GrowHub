@@ -31,12 +31,12 @@
                         This money is instantly available to any compaigner if
                         there is no donor available on the spot for helping
                     </p>
-                    <span>Our JaazCash Account</span>
+                    <span>Our Account No</span>
                     <div
                         class="flex items-center justify-between bg-primary-content px-2 rounded text-white"
                     >
                         <span>GrowHub</span>
-                        <span>0303 3303303</span>
+                        <span>000-000-000-000</span>
                     </div>
                 </form>
                 <form method="dialog" class="modal-backdrop">

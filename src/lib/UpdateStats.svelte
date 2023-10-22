@@ -10,16 +10,19 @@
         <input
             type="number"
             name="donations"
+            placeholder="donations"
             class="input input-bordered w-full block"
         />
         <input
             type="number"
             name="needed"
+            placeholder="needed"
             class="input input-bordered w-full block"
         />
         <input
             type="number"
             name="compaigns"
+            placeholder="compaigns"
             class="input input-bordered w-full block"
         />
         <button class="btn btn-primary">Create</button>
